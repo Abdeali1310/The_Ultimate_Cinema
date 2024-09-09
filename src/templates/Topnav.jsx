@@ -26,7 +26,7 @@ function Topnav() {
   }, [query]);
 
   return (
-    <div className="w-[80%] h-full ">
+    <div className="w-[80%] ">
       <div className="navbar pt-3 relative justify-start ml-[30%] flex gap-5 text-zinc-300 ">
         <i class="ri-search-line text-3xl flex items-center"></i>
         <input
