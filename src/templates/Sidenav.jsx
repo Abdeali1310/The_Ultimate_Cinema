@@ -9,7 +9,7 @@ function Sidenav() {
       <div className="logo flex gap-3 text-3xl">
         <Link>
           {" "}
-          <i class="ri-movie-line text-[#6556cd]"></i>
+          <i className="ri-movie-line text-[#6556cd]"></i>
         </Link>
         <Link className=" font-serif text-white font-semibold">The Movie DB</Link>
       </div>
@@ -18,24 +18,24 @@ function Sidenav() {
 
         {/* links */}
         <div className="links flex flex-col gap-3 mb-5 text-zinc-400 ">
-          <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-fire-fill"></i>
+          <Link to={"/trending"} className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
+            <i className="mr-3 ri-fire-fill"></i>
             <h1>Trending</h1>
           </Link>
           <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-bard-fill"></i>
+            <i className="mr-3 ri-bard-fill"></i>
             <h1>Popular</h1>
           </Link>
           <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-movie-fill"></i>
+            <i className="mr-3 ri-movie-fill"></i>
             <h1>Movies</h1>
           </Link>
           <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-tv-fill"></i>
+            <i className="mr-3 ri-tv-fill"></i>
             <h1>TV Shows</h1>
           </Link>
           <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-team-fill"></i>
+            <i className="mr-3 ri-team-fill"></i>
             <h1>People</h1>
           </Link>
         </div>
@@ -46,11 +46,11 @@ function Sidenav() {
             Website Information
           </h1>
           <Link className=" text-zinc-400 flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-information-fill"></i>
+            <i className="mr-3 ri-information-fill"></i>
             <h1>About</h1>
           </Link>
           <Link className=" text-zinc-400 flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
-            <i class="mr-3 ri-phone-fill"></i>
+            <i className="mr-3 ri-phone-fill"></i>
             <h1>Contact Us</h1>
           </Link>
         </div>
