@@ -7,6 +7,7 @@ import axios from "../utils/axios";
 import Header from "../templates/Header";
 import HorizontalCards from "../templates/HorizontalCards";
 import Dropdown from "../templates/Dropdown";
+import Loading from "../utils/Loading";
 
 function Home() {
   document.title = "The Movie DB | Homepage";
@@ -62,7 +63,7 @@ function Home() {
       </div>
     </>
   ) : (
-    <h1 className="text-white">Loading...</h1>
+    <Loading />
   );
 }
 
