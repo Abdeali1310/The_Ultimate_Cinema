@@ -29,7 +29,9 @@ function Header({ data }) {
         <i className="text-yellow-500 ml-5 ri-album-fill"></i>{" "}
         {data.media_type ? data.media_type.toUpperCase() : "Unknown"}
       </p>
-      <Link className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-5 p-4 rounded text-white font-semibold">Watch Trailer</Link>
+      <Link className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-5 p-4 rounded text-white font-semibold">
+        Watch Trailer
+      </Link>
     </div>
   );
 }
