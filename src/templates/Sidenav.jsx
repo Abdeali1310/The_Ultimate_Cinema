@@ -22,7 +22,7 @@ function Sidenav() {
             <i className="mr-3 ri-fire-fill"></i>
             <h1>Trending</h1>
           </Link>
-          <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
+          <Link to={"/popular"} className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
             <i className="mr-3 ri-bard-fill"></i>
             <h1>Popular</h1>
           </Link>
