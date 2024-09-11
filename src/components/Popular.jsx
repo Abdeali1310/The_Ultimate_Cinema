@@ -53,7 +53,7 @@ const [hasmore,setHasmore] = useState(true);
     refreshHandler();
   }, [category]);
 
-  document.title = "The Movie DB || Popular || "+category.toLocaleUpperCase()
+  document.title = "The Movie DB | Popular | "+category.toLocaleUpperCase()
   return popular ? (
     <div className="min-h-screen w-screen py-4 ">
       <div className="top mb-12 flex justify-between px-[3%] items-center  text-zinc-300">

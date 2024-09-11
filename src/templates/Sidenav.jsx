@@ -34,7 +34,7 @@ function Sidenav() {
             <i className="mr-3 ri-tv-fill"></i>
             <h1>TV Shows</h1>
           </Link>
-          <Link className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
+          <Link to={"/people"} className="flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
             <i className="mr-3 ri-team-fill"></i>
             <h1>People</h1>
           </Link>
