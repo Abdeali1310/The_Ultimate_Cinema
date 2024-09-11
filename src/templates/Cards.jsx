@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 function Cards({ data }) {
   return (
-    <div className="overflow-x-auto w-full h-full px-[3%] bg-[#1f1e24] flex flex-wrap">
+    <div className="overflow-x-auto w-full h-full px-[3%] justify-center bg-[#1f1e24] flex flex-wrap">
       {data.map((d, i) => {
         return (
           <div
             key={i}
-            className=" h-[48vh] w-[34vh] min-w-[15%] rounded-lg mb-10 border-r-1 bg-zinc-900 mr-7"
+            className=" h-[48vh] w-[35vh] min-w-[15%] rounded-lg mb-10 border-r-1 bg-zinc-900 mr-8"
           >
             <img
               src={`https://image.tmdb.org/t/p/original${

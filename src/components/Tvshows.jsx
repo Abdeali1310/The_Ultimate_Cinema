@@ -67,7 +67,7 @@ const [hasmore,setHasmore] = useState(true);
           <h1 className="text-3xl font-semibold text-zinc-400">tvshows</h1>{" "}
         </div>
         <Topnav />
-        <div className="dropdown flex items-center gap-5 mt-2">
+        <div className="dropdown flex items-center gap-5 mt-2 mr-[3%]">
           <Dropdown
             title="Category"
             options={["top_rated", "on_the_air","popular","airing_today"]}

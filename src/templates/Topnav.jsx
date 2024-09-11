@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import axios from "../utils/axios";
 import React, { useEffect, useState } from "react";
@@ -40,7 +39,7 @@ function Topnav() {
         />
 
         {/* query box */}
-        <div className="absolute w-[80%] mt-1 max-h-[50vh] left-[8%] bg-zinc-300 top-[90%] rounded-md overflow-auto">
+        <div className="z-[100] absolute w-[80%] mt-1 max-h-[50vh] left-[6%] bg-zinc-300 top-[92%] rounded-md overflow-auto">
           {search.map((item, index) => {
             return (
               <Link
