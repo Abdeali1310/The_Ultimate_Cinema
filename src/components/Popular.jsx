@@ -83,7 +83,7 @@ const [hasmore,setHasmore] = useState(true);
         hasMore={hasmore}
         loader={<Loading />}
       >
-        <Cards data={popular} />
+        <Cards data={popular} title={category}/>
       </InfiniteScroll>
     </div>
   ) : (

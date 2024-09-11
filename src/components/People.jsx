@@ -58,7 +58,7 @@ function People() {
             src={arrow}
             alt=""
           />
-          <h1 className="text-3xl font-semibold text-zinc-400">people</h1>{" "}
+          <h1 className="text-3xl font-semibold text-zinc-400">People</h1>{" "}
         </div>
         <Topnav />
       </div>
@@ -68,7 +68,7 @@ function People() {
         hasMore={hasmore}
         loader={<Loading />}
       >
-        <Cards data={people} />
+        <Cards data={people} title="person"/>
       </InfiniteScroll>
     </div>
   ) : (
