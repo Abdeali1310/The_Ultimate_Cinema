@@ -11,7 +11,7 @@ function HorizontalCards({ data }) {
       <div className="w-[100%] flex  overflow-y-hidden ">
         {data.map((d, i) => {
           return (
-            <Link to={`/${d.media_type}/details/:id`} key={i} className="min-w-[15%] rounded-lg mb-5 border-r-1 bg-zinc-900 mr-5">
+            <Link to={`/${d.media_type}/details/${d.id}`} key={i} className="min-w-[15%] rounded-lg mb-5 border-r-1 bg-zinc-900 mr-5">
               <img
                 src={`https://image.tmdb.org/t/p/original${
                   d.backdrop_path || d.profile_path

@@ -43,6 +43,7 @@ function Topnav() {
           {search.map((item, index) => {
             return (
               <Link
+              to={`/${item.media_type}/details/${item.id}`}
                 key={index}
                 className="hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 p-7  border-b-[1px] flex justify-start items-center"
               >
