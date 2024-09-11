@@ -19,13 +19,13 @@ function Cards({ data }) {
               className="w-full rounded-md h-[60%] object-cover"
               alt=""
             />
-            <h1 className="text-lg px-4 mt-3 font-serif font-black  text-white">
+            <h1 className="text-xl px-4 mt-3 font-serif font-black  text-white">
               {d.name || d.title || d.original_name || d.original_title}
             </h1>
-            <p className=" text-md mt-3 mb-3 px-4  text-white">
-              {d.overview.slice(0, 180)}...
+            {/* <p className=" text-md mt-3 mb-3 px-4  text-white">
+              
               <Link className="text-blue-400">more</Link>
-            </p>
+            </p> */}
           </div>
         );
       })}
