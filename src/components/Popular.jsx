@@ -28,7 +28,8 @@ const [hasmore,setHasmore] = useState(true);
       }else{
         setHasmore(false);
       }
-
+    console.log(data.results);
+    
       
     } catch (error) {
       console.log("Error = ", error);
