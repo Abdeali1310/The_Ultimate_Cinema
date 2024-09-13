@@ -4,7 +4,7 @@ import notfound from "../assets/notfound.webp";
 function NotFound() {
   return (
     <div className="flex justify-center items-center h-full w-full">
-      <img className="w-[8%] h-[15%]" src={notfound} alt="" />
+      <img className="w-[80%] h-[80%]" src={notfound} alt="" />
     </div>
   );
 }
