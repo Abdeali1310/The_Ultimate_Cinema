@@ -6,22 +6,22 @@ import Dropdown from "./Dropdown";
 import Loading from "../utils/Loading";
 import noimage from "../assets/noimage.jpg";
 
-function HorizontalCards({ data }) {
+function HorizontalCards({ data,title }) {
   return data ? (
     <div className="w-full p-5">
       <div className="w-[110%] h-[50vh] flex overflow-y-hidden ">
         {data.map((d, i) => {
           return (
             <Link
-              to={`/${d.media_type || "person"}/details/${d.id}`}
+              to={`/${d.media_type || title}/details/${d.id}`}
               key={i}
               className="min-w-[18%] rounded-lg mb-5 border-r-1 hover:shadow-2xl bg-zinc-900 mr-5"
             >
               <img
                 src={
-                  d.backdrop_path || d.profile_path
+                  d.backdrop_path || d.profile_path || d.poster_path
                     ? `https://image.tmdb.org/t/p/original${
-                        d.backdrop_path || d.profile_path
+                        d.backdrop_path || d.profile_path || d.poster_path
                       }`
                     : noimage
                 }

@@ -243,16 +243,16 @@ function MovieDetails() {
         <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 4 cast */}
-        <div className="cast mt-28">
+        <div className="cast mt-28 w-[92%]">
           <h1 className="text-3xl text-white font-bold">Cast : </h1>
-          <HorizontalCards data={info.cast && info.cast} />
+          <HorizontalCards title="person" data={info.cast && info.cast} />
         </div>
 
         <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 5 Recommendations and similar stuff */}
         {info.recommendations || info.similar ? (
-          <div className="recommendation mt-28">
+          <div className="recommendation mt-28 w-[92%]">
             <h1 className="text-3xl text-white font-bold">
               You might like these :{" "}
             </h1>

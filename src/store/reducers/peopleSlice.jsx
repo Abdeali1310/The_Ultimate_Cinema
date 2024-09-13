@@ -4,7 +4,7 @@ const initialState= {
     info: null,
   }
 export const peopleSlice = createSlice({
-  name: 'counter',
+  name: 'people',
   initialState,
   reducers: {
     loadpeople:(state,action)=>{

@@ -4,7 +4,7 @@ const initialState= {
     info: null,
   }
 export const tvSlice = createSlice({
-  name: 'counter',
+  name: 'tv',
   initialState,
   reducers: {
     loadtv:(state,action)=>{
