@@ -3,37 +3,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown";
+import Loading from "../utils/Loading";
+import noimage from "../assets/noimage.jpg";
 
 function HorizontalCards({ data }) {
-  return (
-    <div className="w-full h-[40vh]  p-5">
-      
-      <div className="w-[100%] flex  overflow-y-hidden ">
+  return data ? (
+    <div className="w-full p-5">
+      <div className="w-[110%] h-[50vh] flex overflow-y-hidden ">
         {data.map((d, i) => {
           return (
-            <Link to={`/${d.media_type}/details/${d.id}`} key={i} className="min-w-[15%] rounded-lg mb-5 border-r-1 bg-zinc-900 mr-5">
+            <Link
+              to={`/${d.media_type || "person"}/details/${d.id}`}
+              key={i}
+              className="min-w-[18%] rounded-lg mb-5 border-r-1 hover:shadow-2xl bg-zinc-900 mr-5"
+            >
               <img
-                src={`https://image.tmdb.org/t/p/original${
+                src={
                   d.backdrop_path || d.profile_path
-                }`}
-                className="w-full rounded-md h-[45%] object-cover"
+                    ? `https://image.tmdb.org/t/p/original${
+                        d.backdrop_path || d.profile_path
+                      }`
+                    : noimage
+                }
+                className="w-[55vh] rounded-md h-[70%] object-cover"
                 alt=""
               />
               <h1 className="text-lg px-2 mt-3 font-serif font-black  text-white">
-                {d.name ||
-                  d.title ||
-                  d.original_name ||
-                  d.original_title}
+                {d.name || d.title || d.original_name || d.original_title}
               </h1>
-              <p className=" text-sm mt-3 mb-3 px-2 text-white">
-                {d.overview.slice(0, 100)}...
-                <Link className="text-blue-400">more</Link>
-              </p>
+              {d.overview && (
+                <p className=" text-sm mt-3 mb-3 px-2 text-zinc-200">
+                  {d.overview.slice(0, 80)}...
+                  <Link className="text-zinc-400">more</Link>
+                </p>
+              )}
+              {d.character && (
+                <p className=" text-lg mt-3 font-semibold px-2 text-zinc-400">
+                  {d.character}
+                </p>
+              )}
             </Link>
           );
         })}
       </div>
     </div>
+  ) : (
+    <Loading />
   );
 }
 

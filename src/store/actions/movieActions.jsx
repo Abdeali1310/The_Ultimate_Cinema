@@ -10,7 +10,7 @@ export const asyncloadmovie = (id) => async(dispatch)=>{
         const similar = await axios.get(`/movie/${id}/similar`);
         const videos = await axios.get(`/movie/${id}/videos`);
         const watchproviders = await axios.get(`/movie/${id}/watch/providers`);
-
+        const cast = await axios.get(`/movie/${id}/credits`);
         let ultimateDetails = {
             detail:detail.data,
             externalid:externalid.data,
@@ -18,6 +18,7 @@ export const asyncloadmovie = (id) => async(dispatch)=>{
             similar:similar.data.results,
             videos:videos.data.results.find((m)=>m.type === "Trailer"),
             watchproviders:watchproviders.data.results.IN,
+            cast:cast.data.cast,
         }
         // console.log(ultimateDetails);
         dispatch(loadmovie(ultimateDetails))
