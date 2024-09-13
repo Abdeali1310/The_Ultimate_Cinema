@@ -3,7 +3,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { asyncloadmovie, removemovie } from "../store/actions/movieActions";
 import Loading from "../utils/Loading";
 import arrow from "../assets/arrow.svg";
@@ -34,7 +40,7 @@ function MovieDetails() {
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
-        className="h-auto w-screen overflow-auto px-[10%]"
+        className="h-auto w-screen overflow-auto relative px-[10%]"
       >
         {/* part 1 navigation */}
         <nav className="w-full text-zinc-200 h-[10vh] items-center flex gap-12 text-2xl">
@@ -67,7 +73,7 @@ function MovieDetails() {
         </nav>
 
         {/* part 2 poster */}
-        <div className="flex mt-7 h-[40vh] gap-10">
+        <div className="flex mt-7 h-55vh] gap-10">
           <img
             src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
             className="w-[32vh] h-[45vh] rounded-md   object-cover"
@@ -242,18 +248,26 @@ function MovieDetails() {
           <HorizontalCards data={info.cast && info.cast} />
         </div>
 
-        <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none"/>
+        <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 5 Recommendations and similar stuff */}
-        <div className="recommendation mt-28">
-          <h1 className="text-3xl text-white font-bold">
-            You might like these :{" "}
-          </h1>
-          <HorizontalCards
-            data={info.recommendations ? info.recommendations : info.similar}
-          />
-        </div>
+        {info.recommendations || info.similar ? (
+          <div className="recommendation mt-28">
+            <h1 className="text-3xl text-white font-bold">
+              You might like these :{" "}
+            </h1>
+            <HorizontalCards
+              data={info.recommendations ? info.recommendations : info.similar}
+            />
+          </div>
+        ) : (
+          ""
+        )}
+
+      {/* part 6 trailer */}
+      <Outlet />
       </div>
+
     </>
   ) : (
     <Loading />
