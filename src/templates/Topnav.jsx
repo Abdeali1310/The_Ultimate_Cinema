@@ -25,12 +25,12 @@ function Topnav() {
   }, [query]);
 
   return (
-    <div className="w-[80%] ">
-      <div className="navbar pt-3 relative justify-start ml-[30%] flex gap-5 text-zinc-300 ">
+    <div className="w-[80%] relative ">
+      <div className="navbar z-[100] top-5 absolute  left-14 justify-start ml-[30%] flex gap-5 text-zinc-300 ">
         <i className="ri-search-line text-3xl flex items-center"></i>
         <input
           type="search"
-          className="px-5 outline-none border-none bg-transparent text-xl w-[80%] h-[4.5vh] rounded-lg"
+          className="px-5 outline-none border-none bg-transparent text-xl w-[70vh] h-[4.5vh] rounded-lg"
           name="search"
           id="search"
           placeholder="Search anything"
@@ -39,7 +39,7 @@ function Topnav() {
         />
 
         {/* query box */}
-        <div className="z-[100] absolute w-[80%] mt-1 max-h-[50vh] left-[6%] bg-zinc-300 top-[92%] rounded-md overflow-auto">
+        <div className="z-[100] absolute w-[93%] mt-1 max-h-[50vh] left-[7%] bg-zinc-300 top-[90%] rounded-md overflow-auto">
           {search.map((item, index) => {
             return (
               <Link

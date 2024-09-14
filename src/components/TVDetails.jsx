@@ -30,7 +30,7 @@ function TVDetails() {
     };
   }, [id]);
   console.log(info);
-
+  document.title = "The Ultimate Cinema" + " | TV | " + id;
   return info ? (
     <>
       <div
@@ -111,10 +111,12 @@ function TVDetails() {
               <p className="text-lg font-semibold">
                 {info.detail.genres.map((g) => g.name).join(", ")}
               </p>
-              <p className="text-lg font-semibold font-mono text-[#8271f3]">
-                <i class="ri-time-line font-light text-white"></i>{" "}
-                {info.detail.runtime} mins
-              </p>
+              {info.detail.runtime && (
+                <p className="text-lg font-semibold font-mono text-[#8271f3]">
+                  <i class="ri-time-line font-light text-white"></i>{" "}
+                  {info.detail.runtime} mins
+                </p>
+              )}
             </div>
             <div className="tagline ">
               <p className="text-2xl text-zinc-400 italic font-semibold">
@@ -248,21 +250,26 @@ function TVDetails() {
         <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 4 cast */}
-        <div className="cast w-[92%] mt-28">
-          <h1 className="text-3xl text-white font-bold">Cast : </h1>
-          <HorizontalCards title="person" data={info.cast && info.cast} />
-        </div>
-
-        <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
+        {info.cast.length > 0 && (
+          <div className="cast w-[92%] mt-28">
+            <h1 className="text-3xl text-white font-bold">Cast : </h1>
+            <HorizontalCards title="person" data={info.cast && info.cast} />
+            <hr className="bg-zinc-500 w-[80%] mt-24 mb-24 m-auto h-[1.5px] border-none" />
+          </div>
+        )}
 
         {/* part 5 Seasons */}
+        {info.detail.seasons.length > 0 && (
+          <h1 className="text-3xl text-white font-bold">Seasons : </h1>
+        )}
+        <br />
         {info.detail.seasons && (
-          <div className="w-full h-[50vh] flex overflow-y-hidden ">
-            {info.detail.seasons.slice(1).map((d, i) => {
+          <div className="flex overflow-y-hidden ">
+            {info.detail.seasons.slice(0).map((d, i) => {
               return (
                 <Link
                   key={i}
-                  className="min-w-[18%] rounded-lg mb-5 border-r-1 hover:shadow-2xl bg-zinc-900 mr-5"
+                  className="min-w-[21%] h-[60vh] w-[38vh] rounded-lg mb-5 border-r-1 hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] bg-zinc-900 mr-5"
                 >
                   <img
                     src={
@@ -272,14 +279,14 @@ function TVDetails() {
                           }`
                         : noimage
                     }
-                    className="w-[55vh] rounded-md h-[70%] object-cover"
+                    className="w-[55vh] rounded-md h-[75%] object-cover"
                     alt=""
                   />
-                  <h1 className="text-lg px-2 mt-3 font-serif font-black  text-white">
+                  <h1 className="text-lg px-3 mt-3 font-serif font-black  text-white">
                     {d.name || d.title || d.original_name || d.original_title}
                   </h1>
                   {d.overview && (
-                    <p className=" text-sm mt-3 mb-3 px-2 text-zinc-200">
+                    <p className=" text-sm mt-3 mb-3 px-3 text-zinc-200">
                       {d.overview.slice(0, 80)}...
                       <Link className="text-zinc-400">more</Link>
                     </p>
@@ -298,13 +305,17 @@ function TVDetails() {
         <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 6 Recommendations and similar stuff */}
-        {info.recommendations || info.similar ? (
+        {info.recommendations.length > 0 || info.similar.length > 0 ? (
           <div className="recommendation mt-28 w-[92%]">
             <h1 className="text-3xl text-white font-bold">
               You might like these :{" "}
             </h1>
             <HorizontalCards
-              data={info.recommendations ? info.recommendations : info.similar}
+              data={
+                info.recommendations.length > 0
+                  ? info.recommendations
+                  : info.similar
+              }
             />
           </div>
         ) : (

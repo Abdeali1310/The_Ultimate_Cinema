@@ -53,7 +53,7 @@ const [hasmore,setHasmore] = useState(true);
     refreshHandler();
   }, [category]);
 
-  document.title = "The Movie DB | Movie | "+category.toLocaleUpperCase()
+  document.title = "The Ultimate Cinema | Movie | "+category.toLocaleUpperCase()
   return movie ? (
     <div className="min-h-screen w-screen py-4 ">
       <div className="top mb-12 flex justify-between px-[3%] items-center  text-zinc-300">
@@ -66,7 +66,10 @@ const [hasmore,setHasmore] = useState(true);
           />
           <h1 className="text-3xl font-semibold text-zinc-400">Movie</h1>{" "}
         </div>
+        <div className="absolute top-3 left-[25%]">
         <Topnav />
+
+        </div>
         <div className="dropdown flex items-center gap-5 mt-2 mr-[3%]">
           <Dropdown
             title="Category"

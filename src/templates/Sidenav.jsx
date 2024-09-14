@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 function Sidenav() {
   return (
-    <div className="w-[20%] h-full p-7 border-r-[1px] border-zinc-600">
-      <div className="logo flex gap-3 text-3xl">
+    <div className="w-[20%] h-full px-5 py-7 border-r-[1px] border-zinc-600">
+      <div className="logo flex gap-3 text-[26px]">
         <Link>
           {" "}
           <i className="ri-movie-line text-[#6556cd]"></i>
         </Link>
-        <Link className=" font-serif text-white font-semibold">The Movie DB</Link>
+        <Link className=" font-serif text-white font-semibold">The Ultimate Cinema</Link>
       </div>
       <div className="new-feed  px-5">
         <h1 className=" text-white font-medium text-2xl mt-10 mb-7">New Feed</h1>

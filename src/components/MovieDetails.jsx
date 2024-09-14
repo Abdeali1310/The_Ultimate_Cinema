@@ -30,6 +30,7 @@ function MovieDetails() {
     };
   }, [id]);
   console.log(info);
+  document.title = "The Ultimate Cinema" + " | MOVIE | " + id
 
   return info ? (
     <>
@@ -76,7 +77,7 @@ function MovieDetails() {
         <div className="flex mt-7 h-55vh] gap-10">
           <img
             src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
-            className="w-[32vh] h-[45vh] rounded-md   object-cover"
+            className="w-[35vh] h-[50vh] rounded-md shadow-lg shadow-[rgba(255,255,255,0.5)]  object-cover"
             alt=""
           />
 
@@ -106,25 +107,32 @@ function MovieDetails() {
               <p className="text-lg font-semibold">
                 {info.detail.genres.map((g) => g.name).join(", ")}
               </p>
-              <p className="text-lg font-semibold font-mono text-[#8271f3]">
-                <i class="ri-time-line font-light text-white"></i>{" "}
-                {info.detail.runtime} mins
-              </p>
+              {info.detail.runtime && (
+                <p className="text-lg font-semibold font-mono text-[#8271f3]">
+                  <i class="ri-time-line font-light text-white"></i>{" "}
+                  {info.detail.runtime} mins
+                </p>
+              )}
             </div>
             <div className="tagline ">
               <p className="text-2xl text-zinc-400 italic font-semibold">
                 {info.detail.tagline}
               </p>
             </div>
+            
             <div className="overview mt-1 flex flex-col gap-2">
               <h1 className="text-2xl text-zinc-200  font-bold">Overview</h1>
               <p className="text-xl text-zinc-200 w-[90%] font-semibold">
                 {info.detail.overview}
               </p>
             </div>
+            {info.director.original_name && <div className="director mt-1">
+            <p className="text-2xl text-zinc-300 font-serif font-semibold ">Directed By - {info.director.original_name}</p>
 
-            <div className="overview mb-7 mt-3">
-              <p className="text-xl text-zinc-200 w-[95vh] font-semibold">
+            </div>}
+            
+            <div className="language mb-7 mt-3 flex">
+              <p className="text-xl text-zinc-200 font-semibold">
                 <span className="text-lg text-zinc-200  font-semibold">
                   Original Language :{" "}
                 </span>{" "}
@@ -134,6 +142,7 @@ function MovieDetails() {
                     .join(", ")}
                 </span>
               </p>
+
             </div>
 
             <div className="trailer">
@@ -251,13 +260,13 @@ function MovieDetails() {
         <hr className="bg-zinc-500 w-[80%] mt-24 m-auto h-[1.5px] border-none" />
 
         {/* part 5 Recommendations and similar stuff */}
-        {info.recommendations || info.similar ? (
+        {info.recommendations.length > 0 || info.similar.length > 0 ? (
           <div className="recommendation mt-28 w-[92%]">
             <h1 className="text-3xl text-white font-bold">
               You might like these :{" "}
             </h1>
             <HorizontalCards
-              data={info.recommendations ? info.recommendations : info.similar}
+              data={info.recommendations.length > 0 ? info.recommendations : info.similar}
             />
           </div>
         ) : (

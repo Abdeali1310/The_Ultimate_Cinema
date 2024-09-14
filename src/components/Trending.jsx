@@ -54,7 +54,7 @@ const [hasmore,setHasmore] = useState(true);
   useEffect(() => {
     refreshHandler();
   }, [category, duration]);
-  document.title = "The Movie DB | Trending | "+category.toLocaleUpperCase()
+  document.title = "The Ultimate Cinema | Trending | "+category.toLocaleUpperCase()
 
   return trending ? (
     <div className="min-h-screen w-screen py-4 ">

@@ -20,6 +20,7 @@ function Trailer() {
       />{" "}
       {ytvideo ? (
         <ReactPlayer
+        controls
           height={828}
           width={1818}
           className="rounded-2xl"

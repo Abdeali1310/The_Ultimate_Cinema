@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import noimage from '../assets/noimage.jpg'
 
 function Cards({ data,title }) {
   return (
@@ -11,13 +12,11 @@ function Cards({ data,title }) {
           <Link
             to={`/${d.media_type || title}/details/${d.id}`}
             key={i}
-            className=" h-[48vh] w-[35vh] min-w-[15%] rounded-lg mb-10 border-r-1 bg-zinc-900 mr-8"
+            className="hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] h-[48vh] w-[35vh] min-w-[15%] rounded-lg mb-10 border-r-1 bg-zinc-900 mr-8"
           >
             <img
-              src={`https://image.tmdb.org/t/p/original${
-                d.backdrop_path || d.profile_path
-              }`}
-              className="w-full rounded-md h-[60%] object-cover"
+              src={d.backdrop_path || d.profile_path ? `https://image.tmdb.org/t/p/original${d.backdrop_path || d.profile_path} ` : noimage }
+              className="w-full rounded-md h-[70%] object-cover"
               alt=""
             />
             <h1 className="text-xl px-4 mt-3 font-serif font-black  text-white">

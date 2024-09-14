@@ -66,7 +66,10 @@ const [hasmore,setHasmore] = useState(true);
           />
           <h1 className="text-3xl font-semibold text-zinc-400">tvshows</h1>{" "}
         </div>
+        <div className="absolute top-3 left-[25%]">
         <Topnav />
+
+        </div>
         <div className="dropdown flex items-center gap-5 mt-2 mr-[3%]">
           <Dropdown
             title="Category"

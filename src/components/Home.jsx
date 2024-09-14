@@ -10,7 +10,7 @@ import Dropdown from "../templates/Dropdown";
 import Loading from "../utils/Loading";
 
 function Home() {
-  document.title = "The Movie DB | Homepage";
+  document.title = "The Ultimate Cinema | Homepage";
 
   const [wallpaper, setWallpaper] = useState(null);
   const [trending, setTrending] = useState(null);

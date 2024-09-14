@@ -47,7 +47,8 @@ function People() {
     refreshHandler();
   }, [category]);
 
-  document.title = "The Movie DB | people | " + category.toLocaleUpperCase();
+  document.title =
+    "The Ultimate Cinema | people | " + category.toLocaleUpperCase();
   return people ? (
     <div className="min-h-screen w-screen py-4 ">
       <div className="top mb-12 flex justify-between px-[3%] items-center  text-zinc-300">
@@ -60,7 +61,9 @@ function People() {
           />
           <h1 className="text-3xl font-semibold text-zinc-400">People</h1>{" "}
         </div>
-        <Topnav />
+        <div className="absolute top-2 left-[25%]">
+          <Topnav />
+        </div>{" "}
       </div>
       <InfiniteScroll
         dataLength={people.length}
@@ -68,7 +71,7 @@ function People() {
         hasMore={hasmore}
         loader={<Loading />}
       >
-        <Cards data={people} title="person"/>
+        <Cards data={people} title="person" />
       </InfiniteScroll>
     </div>
   ) : (
