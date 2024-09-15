@@ -44,7 +44,7 @@ function Sidenav() {
           <h1 className=" font-medium text-white text-2xl mt-10 mb-5">
             Website Information
           </h1>
-          <Link to={"/about"} target="_blank" className=" text-zinc-400 flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
+          <Link to={"/about"} className=" text-zinc-400 flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">
             <i className="mr-3 ri-information-fill"></i>
             <h1>About</h1>
           </Link>
