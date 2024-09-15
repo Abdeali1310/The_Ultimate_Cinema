@@ -55,14 +55,14 @@ function MovieDetails() {
             target="_blank"
             href={info.detail.homepage}
           >
-            <i classname="ri-external-link-fill"></i>
+            <i className="ri-external-link-fill"></i>
           </a>
           <a
             className="hover:text-[#6556cd]"
             target="_blank"
             href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
           >
-            <i classname="ri-global-line"></i>
+            <i className="ri-global-line"></i>
           </a>
           <a
             className="hover:text-[#6556cd] font-mono"
