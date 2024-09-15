@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-const About = () => {
+function About() {
     document.title = "The Ultimate Cinema | About"
   return (
     <div className="h-screen overflow-x-hidden overflow-y-auto mx-auto bg-gray-100">
