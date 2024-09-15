@@ -13,8 +13,7 @@ import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/Trailer";
 import NotFound from "./utils/NotFound";
 import Contact from "./templates/Contact";
-import About from "./templates/About";
-
+import AboutUs from "./templates/AboutUs";
 function App() {
   return (
     <div className="bg-[#1f1e24] flex w-screen h-screen">
@@ -32,7 +31,7 @@ function App() {
         </Route>
         <Route path="/people" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
