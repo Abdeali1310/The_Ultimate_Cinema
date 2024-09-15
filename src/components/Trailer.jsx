@@ -10,7 +10,7 @@ function Trailer() {
   const { pathname } = useLocation();
   const category = pathname.includes("movie") ? "movie" : "tv";
   const ytvideo = useSelector((state) => state[category].info.videos);
-  console.log(ytvideo);
+  // console.log(ytvideo);
 
   return (
     <div className="absolute z-[100] top-10 right-12 w-[95%] h-[90%] rounded-2xl bg-[rgba(0,0,0,0.9)]">

@@ -40,8 +40,8 @@ function Sidenav() {
         </div>
         <hr className="bg-zinc-600  h-[1px] border-none"/>
         {/* site info */}
-        <div className="">
-          <h1 className=" font-medium text-white text-2xl mt-10 mb-7">
+        <div className="flex flex-col gap-3">
+          <h1 className=" font-medium text-white text-2xl mt-10 mb-5">
             Website Information
           </h1>
           <Link to={"/about"} target="_blank" className=" text-zinc-400 flex text-xl rounded-lg duration-300 p-3 hover:bg-[#6556cd] hover:text-white">

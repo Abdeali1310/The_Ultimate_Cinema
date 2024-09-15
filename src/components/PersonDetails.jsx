@@ -29,7 +29,7 @@ function PersonDetails() {
       dispatch(removeperson());
     };
   }, [id]);
-  console.log(info);
+  // console.log(info);
   document.title = "The Ultimate Cinema" + " | PERSON | " + id;
 
   return info ? (
@@ -59,7 +59,7 @@ function PersonDetails() {
                       target="_blank"
                       href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
                     >
-                      <i class="ri-global-fill"></i>
+                      <i classname="ri-global-fill"></i>
                     </a>
                   )}
 
@@ -70,7 +70,7 @@ function PersonDetails() {
                       target="_blank"
                       href={`https://www.instagram.com/${info.externalid.instagram_id}`}
                     >
-                      <i class="ri-instagram-line"></i>
+                      <i classname="ri-instagram-line"></i>
                     </a>
                   )}
 
@@ -81,7 +81,7 @@ function PersonDetails() {
                       target="_blank"
                       href={`https://www.facebook.com/${info.externalid.facebook_id}`}
                     >
-                      <i class="ri-facebook-line"></i>
+                      <i classname="ri-facebook-line"></i>
                     </a>
                   )}
 
@@ -92,7 +92,7 @@ function PersonDetails() {
                       target="_blank"
                       href={`https://x.com/${info.externalid.twitter_id}`}
                     >
-                      <i class="ri-twitter-x-line"></i>
+                      <i classname="ri-twitter-x-line"></i>
                     </a>
                   )}
               </div>

@@ -42,7 +42,7 @@ function Header({ data }) {
           to={`${data.media_type}/details/${data.id}/trailer`}
           className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-1 p-4 rounded text-white font-semibold"
         >
-          <i class="ri-play-fill"></i> Play Trailer
+          <i classname="ri-play-fill"></i> Play Trailer
         </Link>
       </div>
     </div>

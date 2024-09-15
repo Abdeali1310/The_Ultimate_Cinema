@@ -29,7 +29,7 @@ function MovieDetails() {
       dispatch(removemovie());
     };
   }, [id]);
-  console.log(info);
+  // console.log(info);
   document.title = "The Ultimate Cinema" + " | MOVIE | " + id
 
   return info ? (
@@ -55,14 +55,14 @@ function MovieDetails() {
             target="_blank"
             href={info.detail.homepage}
           >
-            <i class="ri-external-link-fill"></i>
+            <i classname="ri-external-link-fill"></i>
           </a>
           <a
             className="hover:text-[#6556cd]"
             target="_blank"
             href={`https://www.wikidata.org/wiki/${info.externalid.wikidata_id}`}
           >
-            <i class="ri-global-line"></i>
+            <i classname="ri-global-line"></i>
           </a>
           <a
             className="hover:text-[#6556cd] font-mono"
@@ -99,7 +99,7 @@ function MovieDetails() {
                   info.detail.vote_average.toFixed(1) + "/10"}
               </p>
               <p className="text-md font-semibold text-xl">
-                <i class="ri-calendar-line"></i>{" "}
+                <i classname="ri-calendar-line"></i>{" "}
                 {info.detail.release_date && info.detail.release_date}
               </p>
             </div>
@@ -109,7 +109,7 @@ function MovieDetails() {
               </p>
               {info.detail.runtime && (
                 <p className="text-lg font-semibold font-mono text-[#8271f3]">
-                  <i class="ri-time-line font-light text-white"></i>{" "}
+                  <i classname="ri-time-line font-light text-white"></i>{" "}
                   {info.detail.runtime} mins
                 </p>
               )}
@@ -150,7 +150,7 @@ function MovieDetails() {
                 to={`${pathname}/trailer`}
                 className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-1 p-4 rounded text-white font-semibold"
               >
-                <i class="ri-play-fill"></i> Play Trailer
+                <i classname="ri-play-fill"></i> Play Trailer
               </Link>
             </div>
           </div>

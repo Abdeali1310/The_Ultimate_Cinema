@@ -12,7 +12,7 @@ export const asyncloadmovie = (id) => async(dispatch)=>{
         const watchproviders = await axios.get(`/movie/${id}/watch/providers`);
         const cast = await axios.get(`/movie/${id}/credits`);
         const director = await axios.get(`/movie/${id}/credits`);
-        console.log(director);
+        // console.log(director);
         
         let ultimateDetails = {
             detail:detail.data,
