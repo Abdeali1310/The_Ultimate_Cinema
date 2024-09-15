@@ -12,8 +12,8 @@ import TVDetails from "./components/TVDetails";
 import PersonDetails from "./components/PersonDetails";
 import Trailer from "./components/Trailer";
 import NotFound from "./utils/NotFound";
-import About from "./templates/about";
 import Contact from "./templates/Contact";
+import About from "./templates/About";
 
 function App() {
   return (
