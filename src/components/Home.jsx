@@ -47,8 +47,9 @@ function Home() {
 
   return wallpaper && trending ? (
     <>
-      <Sidenav />
-      <div className="w-[80%] h-full overflow-auto overflow-x-hidden">
+    <Sidenav />
+      
+      <div className="w-[100%] lg:w-[80%] h-full overflow-auto overflow-x-hidden">
         <Topnav />
         <Header data={wallpaper} />
         <div className="flex justify-between p-8">

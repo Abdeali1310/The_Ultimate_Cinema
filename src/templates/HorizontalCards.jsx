@@ -15,7 +15,7 @@ function HorizontalCards({ data, title, detail }) {
             <Link
               to={`/${d.media_type || title}/details/${d.id}`}
               key={i}
-              className="min-w-[18%] w-[33vh]  rounded-lg mb-7 border-r-1 hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] bg-zinc-900 mr-5"
+              className="min-w-[75%] md:min-w-[38%] lg:min-w-[32%] xl:min-w-[22%] w-[33vh]  rounded-lg mb-7 border-r-1 hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] bg-zinc-900 mr-5"
             >
               <img
                 src={
@@ -33,7 +33,7 @@ function HorizontalCards({ data, title, detail }) {
               </h1>
               {detail == "no"
                 ? "" : d.overview && (
-                    <p className=" text-sm mt-3 mb-4 px-3 text-zinc-200">
+                    <p className=" text-xs lg:text-md mt-3 mb-4 px-3 text-zinc-200">
                       {d.overview.slice(0, 35)}...
                       <Link className="text-zinc-400">more</Link>
                     </p>

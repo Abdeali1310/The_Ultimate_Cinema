@@ -74,7 +74,7 @@ function MovieDetails() {
         </nav>
 
         {/* part 2 poster */}
-        <div className="flex mt-7 h-55vh] gap-10">
+        <div className="flex mt-7 xl:h-[55vh] items-center justify-center flex-wrap  lg:flex-nowrap gap-7">
           <img
             src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
             className="w-[35vh] h-[50vh] rounded-md shadow-lg shadow-[rgba(255,255,255,0.5)]  object-cover"
@@ -83,9 +83,9 @@ function MovieDetails() {
 
           <div className="details flex flex-col gap-2 text-white">
             <div className="title">
-              <h1 className="text-5xl font-bold font-serif">
+              <h1 className="text-3xl lg:text-5xl text-slate-300 font-bold font-serif">
                 {info.detail.title}{" "}
-                <span className="text-2xl font-sans">
+                <span className="text-xl lg:text-2xl font-sans">
                   {" "}
                   ({info.detail.release_date.split("-")[0]})
                 </span>
@@ -93,12 +93,12 @@ function MovieDetails() {
             </div>
 
             <div className="type flex gap-10">
-              <p className="text-md font-semibold text-xl">
+              <p className="text-lg font-semibold lg:text-xl">
                 TMDB -{" "}
                 {info.detail.vote_average &&
                   info.detail.vote_average.toFixed(1) + "/10"}
               </p>
-              <p className="text-md font-semibold text-xl">
+              <p className="text-lg font-semibold lg:text-xl">
                 <i classname="ri-calendar-line"></i>{" "}
                 {info.detail.release_date && info.detail.release_date}
               </p>
@@ -148,7 +148,7 @@ function MovieDetails() {
             <div className="trailer">
               <Link
                 to={`${pathname}/trailer`}
-                className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-1 p-4 rounded text-white font-semibold"
+                className="bg-[#6556cd]  hover:bg-[#5547b2] w-[10%] mt-1 p-4 rounded text-white font-semibold"
               >
                 <i classname="ri-play-fill"></i> Play Trailer
               </Link>
@@ -176,7 +176,7 @@ function MovieDetails() {
                     <img
                       key={i}
                       title={item.provider_name}
-                      className="rounded-lg w-[7vh] ml-3 h-[7vh]"
+                      className="rounded-lg w-[11vh] md:w-[7vh] ml-3 h-[7vh]"
                       src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
                     />
                   </a>
@@ -185,11 +185,12 @@ function MovieDetails() {
             )}
 
             {info.watchproviders.rent && (
-              <div className="rent mt-8">
-                <div className="platform flex gap-5 items-center">
+              <div className="rent mt-8 ">
+                <div className="platform flex gap-4 flex-wrap items-center">
                   <span className="text-xl text-zinc-200  font-bold">
                     Available on Rent : &nbsp;&nbsp;
                   </span>
+                  
 
                   {info.watchproviders.rent.map((item, i) => (
                     <a
@@ -209,7 +210,7 @@ function MovieDetails() {
                       <img
                         key={i}
                         title={item.provider_name}
-                        className="rounded-lg w-[7vh] ml-3 h-[7vh]"
+                        className="rounded-lg  ml-2 h-[7vh]"
                         src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
                       />
                     </a>
@@ -239,7 +240,7 @@ function MovieDetails() {
                     <img
                       key={i}
                       title={item.provider_name}
-                      className="rounded-lg w-[7vh] ml-3 h-[7vh]"
+                      className="rounded-lg w-[11vh] md:w-[7vh] ml-3 h-[7vh]"
                       src={`https://image.tmdb.org/t/p/original${item.logo_path}`}
                     />
                   </a>

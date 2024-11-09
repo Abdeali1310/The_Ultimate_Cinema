@@ -6,7 +6,7 @@ function Dropdown({ title, options,func }) {
     // console.log(options);
   return (
     
-    <div className="select">
+    <div className="select ml-9">
       <select onChange={func} defaultValue="0" name="format" id="format">
         <option value="0" disabled>
           {title}

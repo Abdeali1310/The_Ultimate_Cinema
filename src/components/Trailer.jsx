@@ -10,19 +10,23 @@ function Trailer() {
   const { pathname } = useLocation();
   const category = pathname.includes("movie") ? "movie" : "tv";
   const ytvideo = useSelector((state) => state[category].info.videos);
-  // console.log(ytvideo);
 
   return (
-    <div className="absolute z-[100] top-10 right-12 w-[95%] h-[90%] rounded-2xl bg-[rgba(0,0,0,0.9)]">
+    <div className="absolute z-[100] top-10 ml-20 right-4 w-[85%] md:w-[80%] lg:w-[85%] mr-4 xl:mr-16 h-[30%] md:h-[50%] lg:h-[80%] rounded-2xl bg-[rgba(0,0,0,0.9)]">
+      {/* Close button */}
       <Link
         onClick={() => navigate(-1)}
-        className=" text-5xl text-zinc-400 absolute top-[-3%] right-[-1%] hover:text-[#6556cd] ri-close-fill "
-      />{" "}
+        className="text-3xl  sm:text-4xl md:text-5xl text-zinc-400 absolute top-[-3%] right-[-3%] hover:text-[#6556cd]"
+      >
+        &times;
+      </Link>
+      
+      {/* ReactPlayer or NotFound */}
       {ytvideo ? (
         <ReactPlayer
-        controls
-          height={828}
-          width={1818}
+          controls
+          width="100%"
+          height="100%"
           className="rounded-2xl"
           url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
         />

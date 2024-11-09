@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Sidenav() {
   return (
-    <div className="w-[20%] h-full px-5 py-7 border-r-[1px] border-zinc-600">
+    <div className="xl:w-[20%] h-full px-5 py-7 border-r-[1px] hidden lg:block border-zinc-600">
       <div className="logo flex gap-3 text-[26px]">
         <Link>
           {" "}

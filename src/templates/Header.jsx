@@ -16,12 +16,12 @@ function Header({ data }) {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-      className="w-full h-[60vh] relative flex flex-col  justify-end p-[6%] rounded-md"
+      className="w-full h-[65vh] pb-12 relative flex flex-col  justify-end p-[6%] rounded-md"
     >
-      <h1 className="w-[70%] text-5xl font-serif font-black text-white">
+      <h1 className="md:w-[70%] text-3xl lg:text-4xl xl:text-5xl font-serif font-black text-white">
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
-      <p className="w-[55%] text-xl mt-3 mb-3 text-white">
+      <p className="md:w-[55%] text-lg md:text-xl mt-3 mb-3 text-white">
         {data.overview.slice(0, 200)}...
         <Link
           to={`/${data.media_type}/details/${data.id}`}

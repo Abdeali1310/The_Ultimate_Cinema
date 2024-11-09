@@ -73,18 +73,18 @@ function TVDetails() {
         </nav>
 
         {/* part 2 poster */}
-        <div className="flex mt-7 h-55vh] gap-10">
+        <div className="flex mt-7 xl:h-[56vh]  items-center justify-center flex-wrap lg:flex-nowrap gap-10">
           <img
             src={`https://image.tmdb.org/t/p/original${info.detail.backdrop_path}`}
             className="w-[32vh] h-[45vh] rounded-md   object-cover"
             alt=""
           />
 
-          <div className="details flex flex-col gap-2 text-white">
-            <div className="title">
-              <h1 className="text-5xl font-bold font-serif">
+          <div className="details ml-2 overflow-hidden flex flex-col gap-2 text-white">
+            <div className="title w-auto">
+              <h1 className="text-3xl lg:text-5xl font-bold font-serif">
                 {info.detail.name}{" "}
-                <span className="text-2xl font-sans">
+                <span className="text-xl lg:text-2xl font-sans">
                   {" "}
                   ({info.detail.first_air_date.split("-")[0]})
                 </span>
@@ -125,13 +125,13 @@ function TVDetails() {
             </div>
             <div className="overview mt-1 flex flex-col gap-2">
               <h1 className="text-2xl text-zinc-200  font-bold">Overview</h1>
-              <p className="text-xl text-zinc-200 w-[90%] font-semibold">
+              <p className="text-xl text-zinc-200 font-semibold">
                 {info.detail.overview}
               </p>
             </div>
 
             <div className="overview mb-7 mt-3">
-              <p className="text-xl text-zinc-200 w-[95vh] font-semibold">
+              <p className="text-xl text-zinc-200 font-semibold">
                 <span className="text-lg text-zinc-200  font-semibold">
                   Original Language :{" "}
                 </span>{" "}
@@ -143,10 +143,10 @@ function TVDetails() {
               </p>
             </div>
 
-            <div className="trailer">
+            <div className="trailer h-16">
               <Link
                 to={`${pathname}/trailer`}
-                className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] mt-1 p-4 rounded text-white font-semibold"
+                className="bg-[#6556cd] hover:bg-[#5547b2] w-[10%] h-12 mt-1 p-4 rounded text-white font-semibold"
               >
                 <i classname="ri-play-fill"></i> Play Trailer
               </Link>
@@ -269,7 +269,7 @@ function TVDetails() {
               return (
                 <Link
                   key={i}
-                  className="min-w-[21%] h-[60vh] w-[38vh] rounded-lg mb-5 border-r-1 hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] bg-zinc-900 mr-5"
+                  className="min-w-[75%] h-[60vh] w-[38vh] md:min-w-[48%] lg:min-w-[30%] xl:min-w-[25%] rounded-lg mb-5 border-r-1 hover:shadow-lg duration-100 hover:shadow-[rgba(255,255,255,.3)] bg-zinc-900 mr-5"
                 >
                   <img
                     src={
